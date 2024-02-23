@@ -1,0 +1,76 @@
+
+
+Employee Management System
+
+apis
+*******
+1. Create Employee (Method : POST)
+http://localhost:6062/api/employees/createEmployee
+{
+    "name": "Hamza Shameem M",
+    "dob" : "2000-04-26T17:06:06.539+00:00",
+    "address": "Mambrathodi",
+    "salary": 45000,
+    "role" : "admin",
+    "joiningDate": "2024-02-21T17:06:06.539+00:00",
+    "yearlyBonusPercentage": "25"
+}
+
+2. Create Department (Method : POST)
+http://localhost:6062/api/departments/createDepartment
+{
+  "name": "Engineering",
+  "creationDate": "2024-02-21T17:06:06.539+00:00",
+  "departmentHead": 1
+}
+
+3.Update Employee (Method : POST)
+http://localhost:6062/api/employees/updateEmployee/{id}
+{
+    "name": "Salman",
+    "dob" : "2000-04-26T17:06:06.539+00:00",
+    "address": "Mambrathodi",
+    "salary": 45000,
+    "role" : "software Engineering",
+    "joiningDate": "2024-02-21T17:06:06.539+00:00",
+    "yearlyBonusPercentage": "25",
+    "reportingManager": 1,
+     "departmentId": 1
+}
+
+4. Move employee to new department (Method : PUT)
+http://localhost:6062/api/employees/{employeeId}/moveToDepartment/{newDepartmentId}
+
+5. Get all employees without pagination (Method : GET)
+http://localhost:6062/api/employees/getAll
+
+6. Get all employees name and ids (Method : GET)
+http://localhost:6062/api/employees/getEmployeeNamesAndIds?lookup=true
+
+7. Get all employees with pageable (Method : GET)
+http://localhost:6062/api/employees/getAllWithPagable
+
+8. Get reporting chain (Method : GET)
+http://localhost:6062/api/employees/reportingChain/{id}
+
+9. Update department (Method : PUT)
+http://localhost:6062/api/departments/updateDepartment/{id}
+
+10. Delete department (Method : DELETE)
+http://localhost:6062/api/departments/delete/{id}
+
+11.Get all department (Method : GET)
+http://localhost:6062/api/departments/getAll
+
+12. Get all employees in a department (Methode : GET)
+http://localhost:6062/api/departments/getWithEmployees/1?expand=expand
+
+13. Get all with pageable
+http://localhost:6062/api/departments/getAllWithPagable
+
+
+14.Get total summary (Method : GET), Native Query
+http://localhost:6062/api/departments/getSummary
+
+15.Get department wise employee summary (method : GET) , native Query
+http://localhost:6062/api/departments/getDepartmentAndEmployeeCounts
